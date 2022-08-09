@@ -1,0 +1,131 @@
+.login-container {
+  min-height: 100vh;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-website-logo {
+  width: 100px;
+  height: 27px;
+  align-self: flex-start;
+}
+.login-form-container {
+  margin: auto;
+  width: 100%;
+}
+
+.login-heading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  color: #ffffff;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-label {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.login-input1 {
+  height: 40px;
+  background-color: #333333;
+  border-radius: 2px;
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #e2e8f0;
+  outline: none;
+  margin-bottom: 16px;
+}
+.login-input2 {
+  height: 40px;
+  background-color: #333333;
+  border-radius: 2px;
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #e2e8f0;
+  outline: none;
+  margin-bottom: 12px;
+}
+.err-msg {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0px;
+  line-height: 16px;
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+.sign-in-btn {
+  padding: 8px 20px;
+  background: #e50914;
+  border-radius: 4px;
+  border: none;
+  height: 40px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #ffffff;
+  padding: 8px 20px 8px 20px;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .login-container {
+    background-image: url('https://res.cloudinary.com/dkbxi5qts/image/upload/v1660027666/login_background_vfobza.png');
+    background-size: cover;
+    padding: 48px 165px 48px 165px;
+  }
+  .login-website-logo {
+    align-self: flex-start;
+    height: 52px;
+    width: 180px;
+  }
+  .login-heading {
+    align-self: center;
+    font-weight: 600;
+  }
+  .login-input1 {
+    margin-bottom: 24px;
+  }
+
+  .login-form-container {
+    justify-content: flex-start;
+    background-color: #0c0b10;
+    border-radius: 8px;
+    opacity: 0.8;
+    width: 456px;
+    height: 440px;
+    padding: 64px 48px 64px 48px;
+    margin: auto;
+  }
+
+  .err-msg {
+    line-height: 18px;
+  }
+}

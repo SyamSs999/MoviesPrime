@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+.footer-page {
+  height: 142px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-icon-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 111px;
+}
+.contact-icon {
+  font-size: 16px;
+  color: #ffffff;
+}
+.contact-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .footer-page {
+    height: 189px;
+  }
+  .contact-icon {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .contact-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
