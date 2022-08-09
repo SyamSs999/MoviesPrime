@@ -1,9 +1,9 @@
-import Home from './components/Home'
+import Popular from './components/Popular'
 import './App.css'
 
 const App = () => (
   <div className="main-container">
-    <Home />
+    <Popular />
   </div>
 )
 

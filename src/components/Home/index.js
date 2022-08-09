@@ -2,6 +2,7 @@ import {Component} from 'react'
 import Slider from 'react-slick'
 
 import NavBar from '../NavBar'
+
 import Footer from '../Footer'
 
 import './index.css'

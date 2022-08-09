@@ -1,8 +1,10 @@
 .nav-bar {
-  padding: 24px 32px 24px 32px;
   background-color: #13131390;
+  min-height: 75px;
 }
 .header {
+  padding: 24px 32px 24px 32px;
+  height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,13 +22,13 @@
   font-size: 26px;
 }
 .show-menu {
-  padding: 0;
   list-style: none;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 32px;
+  margin: 0;
+  padding: 8px 32px 8px 32px;
 }
 .menu-items {
   font-family: 'Roboto';
@@ -63,9 +65,12 @@
   .nav-bar {
     height: 103px;
     padding: 32px 165px 32px 165px;
+    display: flex;
+    align-items: center;
   }
   .header {
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: space-between;
   }
   .show {
     display: none;
