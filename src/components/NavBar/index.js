@@ -18,6 +18,10 @@ class NavBar extends Component {
     this.setState({fullMenu: false})
   }
 
+  onSearch = () => {
+    console.log('hello')
+  }
+
   render() {
     const {fullMenu} = this.state
     const {searchRoute, isHome, isPopular, isAccount} = this.props
@@ -36,11 +40,13 @@ class NavBar extends Component {
     return (
       <nav className="nav-bar">
         <div className="header">
-          <img
-            className="header-web-site"
-            alt="website logo"
-            src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660023880/web_site_logo_vwuuip.png"
-          />
+          <Link to="/" className="img-link">
+            <img
+              className="header-web-site"
+              alt="website logo"
+              src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660023880/web_site_logo_vwuuip.png"
+            />
+          </Link>
           <ul className="show-menu show1">
             <Link to="/" className={homeRoute}>
               <li>Home</li>
@@ -60,6 +66,7 @@ class NavBar extends Component {
               )}
               <Link to="/search">
                 <button
+                  onClick={this.onSearch}
                   testid="searchButton"
                   type="button"
                   className={searchBtn}

@@ -5,6 +5,7 @@ import Login from './components/LoginPage'
 import Popular from './components/Popular'
 import SearchPage from './components/SearchPage'
 import MovieDetails from './components/MovieDetails'
+import Account from './components/AccountPage'
 import NotFound from './components/NotFoundPage'
 
 import './App.css'
@@ -16,6 +17,7 @@ const App = () => (
       <Route path="/" exact component={Home} />
       <Route path="/popular" exact component={Popular} />
       <Route path="/search" exact component={SearchPage} />
+      <Route path="/account" exact component={Account} />
       <Route path="/movies/:id" exact component={MovieDetails} />
       <Route component={NotFound} />
     </Switch>
