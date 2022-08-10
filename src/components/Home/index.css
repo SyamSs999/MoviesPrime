@@ -5,7 +5,7 @@ body {
 .home-page {
   background-image: url('https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-poster.png');
   background-size: cover;
-  min-height: 406px;
+  min-height: 60vh;
 }
 .home-movie-page {
   padding-left: 32px;
@@ -14,8 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 331px;
-  margin-bottom: 32px;
+  min-height: 50vh;
+
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
@@ -95,12 +95,11 @@ body {
 @media (min-width: 768px) {
   .home-page {
     background-image: url('https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png');
-    height: 604px;
+    height: 60vh;
   }
   .home-movie-page {
     padding-left: 165px;
     padding-right: 165px;
-    height: 502px;
     justify-content: center;
   }
   .movies-list-page {
@@ -110,11 +109,13 @@ body {
   .title {
     font-size: 64px;
     line-height: 62px;
+    padding-bottom: 24px;
   }
   .over-view {
     font-size: 20px;
     line-height: 26px;
     width: 443px;
+    margin-bottom: 32px;
   }
   .play-btn {
     width: 74px;

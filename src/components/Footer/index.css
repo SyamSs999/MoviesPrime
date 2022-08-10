@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 .footer-page {
-  height: 142px;
+  height: 20vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,11 +26,9 @@ body {
   font-size: 12px;
   line-height: 16px;
   color: #ffffff;
+  margin-top: 14px;
 }
 @media (min-width: 768px) {
-  .footer-page {
-    height: 189px;
-  }
   .contact-icon {
     font-size: 18px;
     line-height: 21px;
@@ -38,5 +36,6 @@ body {
   .contact-text {
     font-size: 16px;
     line-height: 24px;
+    margin-top: 16px;
   }
 }

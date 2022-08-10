@@ -41,6 +41,8 @@ const settings = {
   ],
 }
 
+const isHome = true
+
 class Home extends Component {
   render() {
     const {title, overview, backdropPath} = randomMovie
@@ -48,7 +50,7 @@ class Home extends Component {
       <>
         <div>
           <div className="home-page">
-            <NavBar />
+            <NavBar isHome={isHome} />
             <div className="home-movie-page">
               <h1 className="title">{title}</h1>
               <p className="over-view">{overview}</p>

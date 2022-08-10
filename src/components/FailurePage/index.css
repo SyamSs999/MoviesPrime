@@ -1,0 +1,54 @@
+.failure-view {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failure-img {
+  height: 172px;
+  width: 233px;
+}
+.failure-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.retry-btn {
+  padding: 8px 24px;
+  width: 107px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 4px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13.5px;
+  line-height: 24px;
+  color: #171f46;
+  border: none;
+}
+@media (min-width: 768px) {
+  .failure-img {
+    width: 375px;
+    height: 276px;
+  }
+  .failure-text {
+    font-size: 24px;
+    line-height: 31px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+  .retry-btn {
+    font-size: 14px;
+    line-height: 24px;
+    width: 110px;
+    height: 48px;
+  }
+}

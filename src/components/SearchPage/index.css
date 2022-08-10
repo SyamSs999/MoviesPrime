@@ -1,0 +1,55 @@
+.search-container {
+  padding-left: 32px;
+  padding-right: 19px;
+  height: 90vh;
+}
+.search-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.no-results-view {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-results-img {
+  height: 176px;
+  width: 210px;
+  margin-bottom: 24px;
+}
+.no-results-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  width: 296px;
+}
+@media (min-width: 768px) {
+  .search-container {
+    padding-left: 165px;
+    padding-right: 135px;
+  }
+  .search-items {
+    margin-top: 32px;
+  }
+  .no-results-img {
+    width: 450px;
+    height: 378px;
+    margin-bottom: 48px;
+  }
+  .no-results-text {
+    padding: 0;
+    width: 100%;
+    font-size: 24px;
+    line-height: 31px;
+  }
+}

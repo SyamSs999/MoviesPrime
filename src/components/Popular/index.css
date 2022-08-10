@@ -8,6 +8,13 @@
   flex-wrap: wrap;
   margin-top: 8px;
 }
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  border: 1px solid white;
+}
 @media (min-width: 768px) {
   .popular-items {
     margin-top: 32px;

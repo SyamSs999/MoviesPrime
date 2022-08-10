@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.movie-detail-page {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-poster.png');
+  background-size: cover;
+  min-height: 60vh;
+}
+.movie-detail-movie-page {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 50vh;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(24, 24, 24, 0.546875) 38.26%,
+    #131313 92.82%,
+    #131313 98.68%,
+    #131313 108.61%
+  );
+}
+.title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 47px;
+  color: #ffffff;
+  margin: 0px;
+}
+.over-view {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 24px;
+}
+.play-btn {
+  padding: 8px 24px;
+  width: 76px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 4px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #171f46;
+  border: none;
+}
+.more-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 177px;
+  margin: 0;
+  height: 25px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
+.duration {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.certificate {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  height: 25px;
+  width: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.release-year {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.movie-info {
+  padding-left: 32px;
+  padding-right: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.info {
+  margin-right: 10px;
+}
+.list-items {
+  padding: 0;
+  margin: 0;
+}
+.info-heading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #64748b;
+  margin-bottom: 7px;
+}
+.info-items {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+}
+.list-item {
+  list-style: none;
+}
+.info1 {
+  margin-top: 16px;
+}
+.info-name {
+  margin-bottom: 4px;
+}
+.similar-movies-container {
+  padding-left: 32px;
+  padding-right: 19px;
+  margin-top: 20px;
+}
+.more-like-this-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.similar-movies-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .movie-detail-page {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png');
+    height: 50vh;
+  }
+  .movie-detail-movie-page {
+    padding-left: 165px;
+    padding-right: 165px;
+    padding-bottom: 42px;
+
+    height: 40vh;
+  }
+
+  .title {
+    font-size: 64px;
+    line-height: 62px;
+    padding-bottom: 0;
+  }
+  .over-view {
+    font-size: 20px;
+    line-height: 26px;
+    width: 75%;
+    margin-bottom: 32px;
+  }
+  .play-btn {
+    width: 74px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+  .more-details {
+    margin-bottom: 24px;
+    margin-top: 12px;
+    width: 192px;
+  }
+  .duration {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .certificate {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .release-year {
+    font-size: 18px;
+    line-height: 23px;
+    height: 27px;
+    width: 55px;
+  }
+  .additional-information {
+    margin-top: 24px;
+    padding-left: 165px;
+    padding-right: 135px;
+  }
+  .movie-info {
+    padding: 0;
+  }
+  .info1 {
+    margin: 0;
+    margin-right: 30px;
+  }
+  .info-heading {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 8px;
+  }
+  .info-items {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .info-name {
+    margin-bottom: 12px;
+  }
+  .similar-movies-container {
+    padding: 0;
+  }
+  .more-like-this-text {
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 24px;
+  }
+}
