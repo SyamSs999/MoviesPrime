@@ -1,8 +1,10 @@
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 
 import NavBar from '../NavBar'
 import MovieItems from '../MovieItems'
 import Footer from '../Footer'
+import FailurePage from '../FailurePage'
 
 import './index.css'
 
@@ -128,7 +130,23 @@ const GenreList = props => {
 }
 
 class MovieDetails extends Component {
-  render() {
+  renderLoaderView = () => (
+    <>
+      <NavBar />
+      <div className="loader-container" testid="loader">
+        <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
+      </div>
+    </>
+  )
+
+  renderFailureView = () => (
+    <>
+      <NavBar />
+      <FailurePage />
+    </>
+  )
+
+  renderSuccessView = () => {
     const {
       title,
       overview,
@@ -138,6 +156,7 @@ class MovieDetails extends Component {
       similarMovies,
     } = movieDetailsList.movieDetails
     const certificateName = adult ? 'A' : 'U/A'
+
     return (
       <>
         <div className="movie-detail-page">
@@ -198,6 +217,10 @@ class MovieDetails extends Component {
         </div>
       </>
     )
+  }
+
+  render() {
+    return <>{this.renderSuccessView()}</>
   }
 }
 

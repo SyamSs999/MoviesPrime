@@ -165,13 +165,12 @@
 @media (min-width: 768px) {
   .movie-detail-page {
     background-image: url('https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png');
-    height: 50vh;
+    min-height: 50vh;
   }
   .movie-detail-movie-page {
     padding-left: 165px;
     padding-right: 165px;
     padding-bottom: 42px;
-
     height: 40vh;
   }
 

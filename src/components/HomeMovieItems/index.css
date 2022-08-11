@@ -1,0 +1,11 @@
+.thumbnail-img {
+  width: 90px;
+  height: 64px;
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .thumbnail-img {
+    width: 255px;
+    height: 170px;
+  }
+}

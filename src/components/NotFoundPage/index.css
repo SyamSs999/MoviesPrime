@@ -1,6 +1,7 @@
 .not-found-view {
   background-image: url('https://res.cloudinary.com/dkbxi5qts/image/upload/v1660136893/snow-removal-machine-working-high-ski-slope-snowstorm_454047-2149_1_1_udligy.png');
   background-size: cover;
+  background-position: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,7 +44,7 @@
 }
 @media (min-width: 768px) {
   .not-found-view {
-    background-image: url('https://res.cloudinary.com/dkbxi5qts/image/upload/v1660131803/snow-removal-machine-working-high-ski-slope-snowstorm_454047-2149_1_exv6zf.png');
+    background-image: url('https://res.cloudinary.com/dkbxi5qts/image/upload/v1660153718/movies%20prime%20app/not_found_background_lg_tqwqrb.svg');
   }
   .not-found-heading {
     font-size: 96px;

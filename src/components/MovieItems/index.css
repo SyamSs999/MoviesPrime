@@ -11,9 +11,9 @@
 .popular-img2 {
   display: none;
 }
-/* .popular-img2:hover {
+.popular-img2:hover {
   border: 3px white solid;
-} */
+}
 @media (min-width: 768px) {
   .popular-item {
     margin-bottom: 24px;

@@ -22,6 +22,7 @@
   font-size: 32px;
   line-height: 40px;
   color: #ffffff;
+  margin-bottom: 24px;
 }
 .login-form {
   display: flex;
@@ -97,7 +98,7 @@
 }
 @media (min-width: 768px) {
   .login-container {
-    background-image: url('https://res.cloudinary.com/dkbxi5qts/image/upload/v1660027666/login_background_vfobza.png');
+    background-image: url('https://res.cloudinary.com/dkbxi5qts/image/upload/v1660153719/movies%20prime%20app/login_backdrop_mwiy7z.svg');
     background-size: cover;
     padding: 48px 165px 48px 165px;
   }
@@ -107,8 +108,9 @@
     width: 180px;
   }
   .login-heading {
-    align-self: center;
+    text-align: center;
     font-weight: 600;
+    margin-bottom: 32px;
   }
   .login-input1 {
     margin-bottom: 24px;
@@ -116,9 +118,9 @@
 
   .login-form-container {
     justify-content: flex-start;
-    background-color: #0c0b10;
+    background-color: #0c0b1099;
+    box-shadow: 0px 4px 16px 0px #333333;
     border-radius: 8px;
-    opacity: 0.8;
     width: 456px;
     height: 440px;
     padding: 64px 48px 64px 48px;

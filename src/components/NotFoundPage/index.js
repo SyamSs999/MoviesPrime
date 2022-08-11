@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import './index.css'
 
 const NotFound = () => (
@@ -7,9 +9,11 @@ const NotFound = () => (
       we are sorry, the page you requested could not be found <br /> Please go
       back to the homepage
     </p>
-    <button className="go-to-home-btn" type="button">
-      Go to Home
-    </button>
+    <Link to="/">
+      <button className="go-to-home-btn" type="button">
+        Go to Home
+      </button>
+    </Link>
   </div>
 )
 

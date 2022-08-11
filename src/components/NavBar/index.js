@@ -44,7 +44,7 @@ class NavBar extends Component {
             <img
               className="header-web-site"
               alt="website logo"
-              src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660023880/web_site_logo_vwuuip.png"
+              src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660153718/movies%20prime%20app/website_logo_xcawni.svg"
             />
           </Link>
           <ul className="show-menu show1">

@@ -33,6 +33,12 @@
   color: #ffffff;
   width: 296px;
 }
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
 @media (min-width: 768px) {
   .search-container {
     padding-left: 165px;

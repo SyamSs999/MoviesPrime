@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 
 import NavBar from '../NavBar'
 import MovieItems from '../MovieItems'
@@ -129,8 +130,10 @@ const searchItems = [
   },
 ]
 
+const searchRoute = true
+
 class SearchPage extends Component {
-  renderSearchSuccess = () => (
+  renderSuccess = () => (
     <ul className="search-items">
       {searchItems.map(eachMovie => (
         <MovieItems eachMovie={eachMovie} key={eachMovie.id} />
@@ -143,11 +146,17 @@ class SearchPage extends Component {
       <img
         className="no-results-img"
         alt="no results"
-        src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660129363/Group_7394_uensih.png"
+        src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660153718/movies%20prime%20app/No_Views_awtv8d.svg"
       />
       <p className="no-results-text">
         Your search for dsadsdsada did not find any matches.
       </p>
+    </div>
+  )
+
+  renderLoaderView = () => (
+    <div className="loader-container" testid="loader">
+      <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
     </div>
   )
 
@@ -156,8 +165,8 @@ class SearchPage extends Component {
   render() {
     return (
       <>
-        <NavBar searchRoute={8 > 0} />
-        <div className="search-container">{this.renderNoResultsView()}</div>
+        <NavBar searchRoute={searchRoute} />
+        <div className="search-container">{this.renderSuccess()}</div>
       </>
     )
   }
