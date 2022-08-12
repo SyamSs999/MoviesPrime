@@ -66,8 +66,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.getOriginalMoviesData()
     this.getTrendingMoviesData()
+    this.getOriginalMoviesData()
   }
 
   getOriginalMoviesData = async () => {

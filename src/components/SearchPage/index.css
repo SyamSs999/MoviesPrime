@@ -1,7 +1,7 @@
 .search-container {
   padding-left: 32px;
   padding-right: 19px;
-  height: 90vh;
+  min-height: 90vh;
 }
 .search-items {
   margin: 0;

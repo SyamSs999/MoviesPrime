@@ -99,6 +99,8 @@
   align-self: center;
   border: none;
   margin-top: 24px;
+  cursor: pointer;
+  outline: none;
 }
 @media (min-width: 768px) {
   .account-page {

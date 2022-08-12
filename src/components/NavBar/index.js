@@ -8,7 +8,7 @@ import {AiFillCloseCircle} from 'react-icons/ai'
 import './index.css'
 
 class NavBar extends Component {
-  state = {fullMenu: false}
+  state = {fullMenu: false, searchValue: ''}
 
   menuShow = () => {
     this.setState({fullMenu: true})
@@ -18,8 +18,16 @@ class NavBar extends Component {
     this.setState({fullMenu: false})
   }
 
+  getSearchInput = event => {
+    this.setState({searchValue: event.target.value})
+  }
+
   onSearch = () => {
-    console.log('hello')
+    const {getSearchMoviesData} = this.props
+    const {searchValue} = this.state
+    if (searchValue !== '') {
+      getSearchMoviesData(searchValue)
+    }
   }
 
   render() {
@@ -59,6 +67,7 @@ class NavBar extends Component {
             <div className={searchContainer}>
               {searchRoute && (
                 <input
+                  onChange={this.getSearchInput}
                   placeholder="Search"
                   type="search"
                   className="search-input"

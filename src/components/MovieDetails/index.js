@@ -1,126 +1,20 @@
 import {Component} from 'react'
+import {format} from 'date-fns'
 import Loader from 'react-loader-spinner'
+import Cookies from 'js-cookie'
 
 import NavBar from '../NavBar'
-import MovieItems from '../MovieItems'
+import SimilarMovies from '../SimilarMovies'
 import Footer from '../Footer'
 import FailurePage from '../FailurePage'
 
 import './index.css'
-
-const movieDetailsList = {
-  movieDetails: {
-    adult: false,
-    backdropPath:
-      'https://assets.ccbp.in/frontend/react-js/movies-app/venom-let-there-be-carnage-movie-background-v0.png',
-    budget: '11 Crores',
-    genres: [
-      {
-        id: 'af2384dc-494b-48a7-a94d-91e6b279f20b',
-        name: 'Science Fiction',
-      },
-      {
-        id: '16106068-2d4e-438f-8a9a-fa0b91e4246a',
-        name: 'Action',
-      },
-      {
-        id: '0c29016b-ff7f-4d67-8f95-f8681bc7ff1c',
-        name: 'Adventure',
-      },
-    ],
-    id: '51b4602f-b0f2-4c81-98e0-a2a409b13926',
-    overview:
-      'Super villains Harley Quinn, Bloodsport, Peacemaker and a collection of nutty cons at Belle ',
-    posterPath:
-      'https://assets.ccbp.in/frontend/react-js/movies-app/dune-movie-poster.png',
-    release_date: '2021-09-30',
-    runtime: 97,
-    similarMovies: [
-      {
-        backdropPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/dune-movie-background-v0.png',
-        id: 'c6ef2389-078a-4117-b2dd-1dee027e5e8e',
-        overview:
-          'Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people.',
-        posterPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/dune-movie-poster.png',
-        title: 'Dune',
-      },
-      {
-        backdropPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/no-time-to-die-movie-background-v0.png',
-        id: '92c2cde7-d740-443d-8929-010b46cb0305',
-        overview:
-          'Bond has left active service and is enjoying a tranquil life in Jamaica. His peace is short-lived when his old friend Felix Leiter from the CIA turns up asking for help. The mission to rescue a kidnapped scientist turns out to be far more treacherous than expected, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.',
-        posterPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/no-time-to-die-movie-poster.png',
-        title: 'No Time to Die',
-      },
-      {
-        backdropPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/shang-chi-and-the-legend-of-the-ten-rings-movie-background-v0.png',
-        id: '046084e1-a782-406-b723-f98c5c57ebc0',
-        overview:
-          'Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.',
-        posterPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/shang-chi-and-the-legend-of-the-ten-rings-movie-poster.png',
-        title: 'Shang-Chi and the Legend of the Ten Rings',
-      },
-      {
-        backdropPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png',
-        id: 'ef33428-5527-44d0-a713-1aeef4d5668',
-        overview:
-          "Austin's hottest DJ, Jungle Julia, sets out into the night to unwind with her two friends Shanna and Arlene. Covertly tracking their moves is Stuntman Mike, a scarred rebel leering from behind the wheel of his muscle car, revving just feet away.",
-        posterPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-poster.png',
-        title: 'Death Proof',
-      },
-      {
-        backdropPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/shang-chi-and-the-legend-of-the-ten-rings-movie-background-v0.png',
-        id: '046084e1-782-4086-b723-f98c5c57ebc0',
-        overview:
-          'Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.',
-        posterPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/shang-chi-and-the-legend-of-the-ten-rings-movie-poster.png',
-        title: 'Shang-Chi and the Legend of the Ten Rings',
-      },
-      {
-        backdropPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png',
-        id: 'efb33428-5527-4d0-a713-1aeef4d56968',
-        overview:
-          "Austin's hottest DJ, Jungle Julia, sets out into the night to unwind with her two friends Shanna and Arlene. Covertly tracking their moves is Stuntman Mike, a scarred rebel leering from behind the wheel of his muscle car, revving just feet away.",
-        posterPath:
-          'https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-poster.png',
-        title: 'Death Proof',
-      },
-    ],
-    spokenLanguages: [
-      {
-        id: '4bc5f2cf-04d6-4064-bd0d-fc927fda507d',
-        language: 'English',
-      },
-      {
-        id: '4bc5f2cf-04d6-4064-bd0d-fc927fda507',
-        language: 'Telugu',
-      },
-      {
-        id: '4bc5f2cf-04d6-4064-bd0d-fc92fda507d',
-        language: 'Hindi',
-      },
-    ],
-    title: 'Venom',
-    voteAverage: 6.8,
-    voteCount: 1514,
-  },
-}
+import HomeContainer from './StyledComponents'
 
 const AvailableLanguages = props => {
   const {eachItem} = props
-  const {language} = eachItem
-  return <li className="info-items list-item">{language}</li>
+  const {englishName} = eachItem
+  return <li className="info-items list-item">{englishName}</li>
 }
 
 const GenreList = props => {
@@ -129,7 +23,81 @@ const GenreList = props => {
   return <li className="info-items list-item">{name}</li>
 }
 
+const renderConstraints = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  fail: 'FAIL',
+  loading: 'LOADING',
+}
+
 class MovieDetails extends Component {
+  state = {movieDetailsList: [], renderStatus: renderConstraints.initial}
+
+  componentDidMount() {
+    this.getMovieDetails()
+  }
+
+  getMovieDetails = async () => {
+    this.setState({renderStatus: renderConstraints.loading})
+    const jwtToken = Cookies.get('jwt_token')
+    const {match} = this.props
+    const {params} = match
+    const {id} = params
+    const movieDetailsApi = `https://apis.ccbp.in/movies-app/movies/${id}`
+    const options = {
+      method: 'GET',
+      headers: {Authorization: `Bearer ${jwtToken}`},
+    }
+    const response = await fetch(movieDetailsApi, options)
+    if (response.ok) {
+      const data = await response.json()
+      const updatedGenreList = data.movie_details.genres.map(eachGenre => ({
+        id: eachGenre.id,
+        name: eachGenre.name,
+      }))
+      const updatedSimilarMovies = data.movie_details.similar_movies.map(
+        eachMovie => ({
+          backdropPath: eachMovie.backdrop_path,
+          id: eachMovie.id,
+          posterPath: eachMovie.poster_path,
+          title: eachMovie.title,
+        }),
+      )
+      const updatedSpokenLanguages = data.movie_details.spoken_languages.map(
+        eachLanguage => ({
+          id: eachLanguage.id,
+          englishName: eachLanguage.english_name,
+        }),
+      )
+      const updatedData = {
+        adult: data.movie_details.adult,
+        backdropPath: data.movie_details.backdrop_path,
+        budget: data.movie_details.budget,
+        genres: updatedGenreList,
+        id: data.movie_details.id,
+        overview: data.movie_details.overview,
+        posterPath: data.movie_details.poster_path,
+        releaseDate: data.movie_details.release_date,
+        runtime: data.movie_details.runtime,
+        similarMovies: updatedSimilarMovies,
+        spokenLanguages: updatedSpokenLanguages,
+        title: data.movie_details.title,
+        voteAverage: data.movie_details.vote_average,
+        voteCount: data.movie_details.vote_count,
+      }
+      this.setState({
+        movieDetailsList: updatedData,
+        renderStatus: renderConstraints.success,
+      })
+    } else {
+      this.setState({renderStatus: renderConstraints.fail})
+    }
+  }
+
+  tryAgainMoviesData = () => {
+    this.getMovieDetails()
+  }
+
   renderLoaderView = () => (
     <>
       <NavBar />
@@ -142,38 +110,55 @@ class MovieDetails extends Component {
   renderFailureView = () => (
     <>
       <NavBar />
-      <FailurePage />
+      <FailurePage tryAgain={this.tryAgainMoviesData} />
     </>
   )
 
   renderSuccessView = () => {
-    const {
-      title,
-      overview,
-      genres,
-      spokenLanguages,
-      adult,
-      similarMovies,
-    } = movieDetailsList.movieDetails
-    const certificateName = adult ? 'A' : 'U/A'
+    const {movieDetailsList} = this.state
 
+    const {
+      adult,
+      backdropPath,
+      budget,
+      genres,
+      overview,
+      posterPath,
+      releaseDate,
+      runtime,
+      similarMovies,
+      spokenLanguages,
+      title,
+      voteAverage,
+      voteCount,
+    } = movieDetailsList
+    const inHours = Math.floor(runtime / 60)
+    const inMinutes = runtime % 60
+    const runTimeInHoursAndMinutes = `${inHours}h ${inMinutes}m`
+    const certificateName = adult ? 'A' : 'U/A'
+    const releaseYear = format(new Date(releaseDate), 'yyyy')
+    const releaseDateFormat = format(new Date(releaseDate), 'do MMMM yyyy')
     return (
       <>
-        <div className="movie-detail-page">
+        <HomeContainer
+          backgroundSmPath={posterPath}
+          backgroundLgPath={backdropPath}
+          className="movie-detail-page"
+        >
           <NavBar />
           <div className="movie-detail-movie-page">
             <h1 className="title">{title}</h1>
             <div className="more-details">
-              <p className="duration">2h 42m</p>
+              <p className="duration">{runTimeInHoursAndMinutes}</p>
               <p className="certificate">{certificateName}</p>
-              <p className="release-year">2007</p>
+              <p className="release-year">{releaseYear}</p>
             </div>
             <p className="over-view">{overview}</p>
             <button type="button" className="play-btn">
               Play
             </button>
           </div>
-        </div>
+        </HomeContainer>
         <div className="additional-information">
           <div className="movie-info">
             <div className="info">
@@ -194,22 +179,22 @@ class MovieDetails extends Component {
             </div>
             <div className="info">
               <p className="info-heading">Rating Count</p>
-              <p className="info-items info-name">60,020</p>
+              <p className="info-items info-name">{voteCount}</p>
               <p className="info-heading">Rating Average</p>
-              <p className="info-items info-name">4.8</p>
+              <p className="info-items info-name">{voteAverage}</p>
             </div>
             <div className="info info1">
               <p className="info-heading">Budget</p>
-              <p className="info-items info-name">60,020 Cores </p>
+              <p className="info-items info-name">{budget}</p>
               <p className="info-heading">Release Date</p>
-              <p className="info-items info-name">27th April 2007</p>
+              <p className="info-items info-name">{releaseDateFormat}</p>
             </div>
           </div>
           <div className="similar-movies-container">
             <h1 className="more-like-this-text">More like this</h1>
             <ul className="similar-movies-list">
               {similarMovies.map(eachMovie => (
-                <MovieItems eachMovie={eachMovie} key={eachMovie.id} />
+                <SimilarMovies eachMovie={eachMovie} key={eachMovie.id} />
               ))}
             </ul>
           </div>
@@ -219,8 +204,22 @@ class MovieDetails extends Component {
     )
   }
 
+  renderSwitchView = () => {
+    const {renderStatus} = this.state
+    switch (renderStatus) {
+      case renderConstraints.loading:
+        return this.renderLoaderView()
+      case renderConstraints.success:
+        return this.renderSuccessView()
+      case renderConstraints.fail:
+        return this.renderFailureView()
+      default:
+        return null
+    }
+  }
+
   render() {
-    return <>{this.renderSuccessView()}</>
+    return <>{this.renderSwitchView()}</>
   }
 }
 

@@ -33,6 +33,8 @@
   line-height: 24px;
   color: #171f46;
   border: none;
+  cursor: pointer;
+  outline: none;
 }
 @media (min-width: 768px) {
   .failure-img {

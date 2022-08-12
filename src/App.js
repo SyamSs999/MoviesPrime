@@ -1,5 +1,6 @@
 import {Switch, Route} from 'react-router-dom'
 
+import ProtectedRoute from './components/ProtectedRoute'
 import Home from './components/Home'
 import Login from './components/LoginPage'
 import Popular from './components/Popular'
@@ -14,11 +15,11 @@ const App = () => (
   <div className="main-container">
     <Switch>
       <Route path="/login" exact component={Login} />
-      <Route path="/" exact component={Home} />
-      <Route path="/popular" exact component={Popular} />
-      <Route path="/search" exact component={SearchPage} />
-      <Route path="/account" exact component={Account} />
-      <Route path="/movies/:id" exact component={MovieDetails} />
+      <ProtectedRoute path="/" exact component={Home} />
+      <ProtectedRoute path="/popular" exact component={Popular} />
+      <ProtectedRoute path="/search" exact component={SearchPage} />
+      <ProtectedRoute path="/account" exact component={Account} />
+      <ProtectedRoute path="/movies/:id" exact component={MovieDetails} />
       <Route component={NotFound} />
     </Switch>
   </div>
