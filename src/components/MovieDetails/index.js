@@ -9,18 +9,25 @@ import Footer from '../Footer'
 import FailurePage from '../FailurePage'
 
 import './index.css'
-import HomeContainer from './StyledComponents'
 
 const AvailableLanguages = props => {
   const {eachItem} = props
   const {englishName} = eachItem
-  return <li className="info-items list-item">{englishName}</li>
+  return (
+    <li className="info-items list-item">
+      <p>{englishName}</p>
+    </li>
+  )
 }
 
 const GenreList = props => {
   const {eachItem} = props
   const {name} = eachItem
-  return <li className="info-items list-item">{name}</li>
+  return (
+    <li className="info-items list-item">
+      <p>{name}</p>
+    </li>
+  )
 }
 
 const renderConstraints = {
@@ -123,7 +130,6 @@ class MovieDetails extends Component {
       budget,
       genres,
       overview,
-      posterPath,
       releaseDate,
       runtime,
       similarMovies,
@@ -140,9 +146,8 @@ class MovieDetails extends Component {
     const releaseDateFormat = format(new Date(releaseDate), 'do MMMM yyyy')
     return (
       <>
-        <HomeContainer
-          backgroundSmPath={posterPath}
-          backgroundLgPath={backdropPath}
+        <div
+          style={{backgroundImage: `url(${backdropPath})`}}
           className="movie-detail-page"
         >
           <NavBar />
@@ -158,11 +163,11 @@ class MovieDetails extends Component {
               Play
             </button>
           </div>
-        </HomeContainer>
+        </div>
         <div className="additional-information">
           <div className="movie-info">
             <div className="info">
-              <p className="info-heading">Genres</p>
+              <h1 className="info-heading">Genres</h1>
               <ul className="list-items">
                 {genres.map(eachItem => (
                   <GenreList eachItem={eachItem} key={eachItem.id} />
@@ -170,7 +175,7 @@ class MovieDetails extends Component {
               </ul>
             </div>
             <div className="info">
-              <p className="info-heading">Audio Available</p>
+              <h1 className="info-heading">Audio Available</h1>
               <ul className="list-items">
                 {spokenLanguages.map(eachItem => (
                   <AvailableLanguages eachItem={eachItem} key={eachItem.id} />
@@ -178,25 +183,25 @@ class MovieDetails extends Component {
               </ul>
             </div>
             <div className="info">
-              <p className="info-heading">Rating Count</p>
+              <h1 className="info-heading">Rating Count</h1>
               <p className="info-items info-name">{voteCount}</p>
-              <p className="info-heading">Rating Average</p>
+              <h1 className="info-heading">Rating Average</h1>
               <p className="info-items info-name">{voteAverage}</p>
             </div>
             <div className="info info1">
-              <p className="info-heading">Budget</p>
+              <h1 className="info-heading">Budget</h1>
               <p className="info-items info-name">{budget}</p>
-              <p className="info-heading">Release Date</p>
+              <h1 className="info-heading">Release Date</h1>
               <p className="info-items info-name">{releaseDateFormat}</p>
             </div>
           </div>
           <div className="similar-movies-container">
             <h1 className="more-like-this-text">More like this</h1>
-            <ul className="similar-movies-list">
+            <div className="similar-movies-list">
               {similarMovies.map(eachMovie => (
                 <SimilarMovies eachMovie={eachMovie} key={eachMovie.id} />
               ))}
-            </ul>
+            </div>
           </div>
           <Footer />
         </div>

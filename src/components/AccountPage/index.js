@@ -26,8 +26,10 @@ const Account = props => {
         <div className="member-ship-details">
           <p className="member-ship-text">Member ship</p>
           <div className="userDetails">
-            <p className="username">{username}@gmail.com</p>
-            <p className="password">Password: {maskedPassword}</p>
+            <p className="username">{username}</p>
+            <p className="password">
+              Password <span>: {maskedPassword}</span>
+            </p>
           </div>
         </div>
         <hr className="separator" />
@@ -38,7 +40,7 @@ const Account = props => {
         </div>
         <hr className="separator" />
         <button onClick={onLogout} type="button" className="log-out-btn">
-          Log out
+          Logout
         </button>
       </div>
       <Footer />

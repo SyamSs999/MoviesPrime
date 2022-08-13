@@ -10,7 +10,7 @@ const Footer = () => (
       <FaInstagram className="contact-icon" />
       <FaYoutube className="contact-icon" />
     </div>
-    <p className="contact-text">Contact Us</p>
+    <p className="contact-text">Contact us</p>
   </div>
 )
 

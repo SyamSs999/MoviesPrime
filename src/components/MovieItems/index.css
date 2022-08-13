@@ -1,31 +1,16 @@
-.popular-item {
-  color: #ffffff;
-  margin-right: 13px;
-  margin-bottom: 16px;
-}
-.popular-img1 {
+.popular-img {
   width: 90px;
   height: 100px;
   border-radius: 4px;
-}
-.popular-img2 {
-  display: none;
-}
-.popular-img2:hover {
-  border: 3px white solid;
+  margin-right: 13px;
+  margin-bottom: 16px;
 }
 @media (min-width: 768px) {
-  .popular-item {
-    margin-bottom: 24px;
-    margin-right: 30px;
-  }
-  .popular-img1 {
-    display: none;
-  }
-  .popular-img2 {
-    display: block;
+  .popular-img {
     width: 255px;
     height: 170px;
     border-radius: 8px;
+    margin-bottom: 24px;
+    margin-right: 30px;
   }
 }

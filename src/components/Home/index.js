@@ -8,7 +8,6 @@ import NavBar from '../NavBar'
 import HomeMovieItems from '../HomeMovieItems'
 import Footer from '../Footer'
 
-import HomeContainer from './StyledComponent'
 import './index.css'
 
 const settings = {
@@ -145,23 +144,22 @@ class Home extends Component {
 
   renderPosterSuccessView = () => {
     const {randomMovie} = this.state
-    const {title, overview, backdropPath, posterPath} = randomMovie
+    const {title, overview, backdropPath} = randomMovie
 
     return (
-      <HomeContainer
-        backgroundSmPath={posterPath}
-        backgroundLgPath={backdropPath}
+      <div
+        style={{backgroundImage: `url(${backdropPath})`}}
         className="home-page"
       >
         <NavBar isHome={isHome} />
         <div className="home-movie-page">
           <h1 className="title">{title}</h1>
-          <p className="over-view">{overview}</p>
+          <h1 className="over-view">{overview}</h1>
           <button type="button" className="play-btn">
             Play
           </button>
         </div>
-      </HomeContainer>
+      </div>
     )
   }
 

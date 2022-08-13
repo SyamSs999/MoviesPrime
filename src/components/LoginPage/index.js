@@ -86,7 +86,7 @@ class Login extends Component {
             />
             {errMsg.length > 0 && <p className="err-msg">{errMsg}</p>}
             <button className="sign-in-btn" type="submit">
-              Sign in
+              Login
             </button>
           </form>
         </div>

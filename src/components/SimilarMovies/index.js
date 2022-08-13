@@ -2,14 +2,9 @@ import './index.css'
 
 const SimilarMovies = props => {
   const {eachMovie} = props
-  const {posterPath, title, backdropPath} = eachMovie
+  const {posterPath, title} = eachMovie
 
-  return (
-    <li className="similar-movies-item">
-      <img className="similar-movies-img1" alt={title} src={posterPath} />
-      <img className="similar-movies-img2" alt={title} src={backdropPath} />
-    </li>
-  )
+  return <img className="similar-movies-img" alt={title} src={posterPath} />
 }
 
 export default SimilarMovies
