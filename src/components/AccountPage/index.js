@@ -7,10 +7,7 @@ import './index.css'
 
 const isAccount = true
 
-const Account = props => {
-  const username = Cookies.get('username')
-  const maskedPassword = Cookies.get('maskedPassword')
-
+const AccountPage = props => {
   const onLogout = () => {
     Cookies.remove('jwt_token')
     const {history} = props
@@ -26,10 +23,9 @@ const Account = props => {
         <div className="member-ship-details">
           <p className="member-ship-text">Member ship</p>
           <div className="userDetails">
-            <p className="username">{username}</p>
-            <p className="password">
-              Password <span>: {maskedPassword}</span>
-            </p>
+            <p className="username">Rahul@gmail.com</p>
+            <p className="password">Password</p>
+            <span>: **********</span>
           </div>
         </div>
         <hr className="separator" />
@@ -48,4 +44,4 @@ const Account = props => {
   )
 }
 
-export default Account
+export default AccountPage

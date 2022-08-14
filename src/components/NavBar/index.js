@@ -102,26 +102,28 @@ class NavBar extends Component {
         </div>
 
         {fullMenu && (
-          <ul className="show-menu">
-            <Link to="/" className={homeRoute}>
-              <li>Home</li>
-            </Link>
-            <Link to="/popular" className={popularRoute}>
-              <li>Popular</li>
-            </Link>
-            <Link to="/account" className={accountRoute}>
-              <li>Account</li>
-            </Link>
-            <li>
-              <button
-                onClick={this.menuHide}
-                className="close-btn"
-                type="button"
-              >
-                <AiFillCloseCircle className="close icons" />
-              </button>
-            </li>
-          </ul>
+          <nav>
+            <ul className="show-menu">
+              <Link to="/" className={homeRoute}>
+                <li>Home</li>
+              </Link>
+              <Link to="/popular" className={popularRoute}>
+                <li>Popular</li>
+              </Link>
+              <Link to="/account" className={accountRoute}>
+                <li>Account</li>
+              </Link>
+              <li>
+                <button
+                  onClick={this.menuHide}
+                  className="close-btn"
+                  type="button"
+                >
+                  <AiFillCloseCircle className="close icons" />
+                </button>
+              </li>
+            </ul>
+          </nav>
         )}
       </nav>
     )

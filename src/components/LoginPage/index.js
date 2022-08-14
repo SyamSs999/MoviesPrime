@@ -19,9 +19,6 @@ class Login extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
-    const maskedPassword = '*'.repeat(password.length)
-    Cookies.set('username', username, {expires: 30})
-    Cookies.set('maskedPassword', maskedPassword, {expires: 30})
     const loginUrl = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',

@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 import './index.css'
 
-const NotFound = () => (
+const NotFoundPage = () => (
   <div className="not-found-view">
     <h1 className="not-found-heading">Lost Your Way ?</h1>
     <p className="not-found-desc">
@@ -17,4 +17,4 @@ const NotFound = () => (
   </div>
 )
 
-export default NotFound
+export default NotFoundPage

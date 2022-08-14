@@ -103,8 +103,8 @@ body {
 }
 
 .warning-icon {
-  font-size: 22px;
-  color: #d81f26;
+  width: 24px;
+  height: 24px;
 }
 .poster-error-msg {
   font-family: 'Roboto';
@@ -140,8 +140,8 @@ body {
   margin-bottom: 24px;
 }
 .thumbnail-warning-icon {
-  font-size: 15px;
-  color: #d81f26;
+  width: 16px;
+  height: 16px;
 }
 .thumbnail-error-msg {
   font-family: 'Roboto';
@@ -172,7 +172,6 @@ body {
     padding-right: 165px;
   }
   .home-page {
-    background-image: url('https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png');
     height: 60vh;
     margin-bottom: 48px;
   }
@@ -232,7 +231,8 @@ body {
     margin-top: 32px;
   }
   .warning-icon {
-    font-size: 44px;
+    width: 48px;
+    height: 48px;
   }
   .poster-error-msg {
     font-size: 14px;
@@ -249,7 +249,8 @@ body {
     height: 170px;
   }
   .thumbnail-warning-icon {
-    font-size: 30px;
+    width: 32px;
+    height: 32px;
   }
   .thumbnail-error-msg {
     margin-top: 20px;

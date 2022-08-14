@@ -1,7 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Slider from 'react-slick'
-import {IoIosWarning} from 'react-icons/io'
 import Loader from 'react-loader-spinner'
 
 import NavBar from '../NavBar'
@@ -11,26 +10,9 @@ import Footer from '../Footer'
 import './index.css'
 
 const settings = {
-  infinite: true,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-  ],
 }
 
 const renderOriginalsConstraints = {
@@ -57,7 +39,7 @@ const isHome = true
 class Home extends Component {
   state = {
     renderOriginalsStatus: renderOriginalsConstraints.initial,
-    renderTrendingStatus: renderOriginalsConstraints.initial,
+    renderTrendingStatus: renderTrendingConstraints.initial,
     renderPosterStatus: renderPosterConstraints.initial,
     randomMovie: {},
     originalMoviesList: [],
@@ -72,7 +54,7 @@ class Home extends Component {
   getOriginalMoviesData = async () => {
     this.setState({
       renderOriginalsStatus: renderOriginalsConstraints.loading,
-      renderPosterStatus: renderOriginalsConstraints.loading,
+      renderPosterStatus: renderPosterConstraints.loading,
     })
     const jwtToken = Cookies.get('jwt_token')
     const options = {
@@ -81,9 +63,8 @@ class Home extends Component {
     }
     const originalsDataApi = 'https://apis.ccbp.in/movies-app/originals'
     const response = await fetch(originalsDataApi, options)
-    if (response.ok) {
+    if (response.ok === true) {
       const data = await response.json()
-
       const fetchedOriginalsData = data.results.map(eachMovie => ({
         backdropPath: eachMovie.backdrop_path,
         id: eachMovie.id,
@@ -97,12 +78,12 @@ class Home extends Component {
         originalMoviesList: fetchedOriginalsData,
         renderOriginalsStatus: renderOriginalsConstraints.success,
         randomMovie,
-        renderPosterStatus: renderOriginalsConstraints.success,
+        renderPosterStatus: renderPosterConstraints.success,
       })
     } else {
       this.setState({
         renderOriginalsStatus: renderOriginalsConstraints.fail,
-        renderPosterStatus: renderOriginalsConstraints.fail,
+        renderPosterStatus: renderPosterConstraints.fail,
       })
     }
   }
@@ -120,7 +101,7 @@ class Home extends Component {
     }
     const trendingDataApi = 'https://apis.ccbp.in/movies-app/trending-movies'
     const response = await fetch(trendingDataApi, options)
-    if (response.ok) {
+    if (response.ok === true) {
       const data = await response.json()
       const fetchedTrendingData = data.results.map(eachMovie => ({
         backdropPath: eachMovie.backdrop_path,
@@ -199,7 +180,11 @@ class Home extends Component {
       <NavBar />
       <div className="error-page-container">
         <div className="error-page">
-          <IoIosWarning className="warning-icon" />
+          <img
+            className="warning-icon"
+            alt="failure view"
+            src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660451047/movies%20prime%20app/alert-triangle_najaul.png"
+          />
           <p className="poster-error-msg">
             Something went wrong. Please try again
           </p>
@@ -218,7 +203,11 @@ class Home extends Component {
   renderOriginalsErrorView = () => (
     <div className="error-page-container">
       <div className="thumbnail-error-page">
-        <IoIosWarning className="thumbnail-warning-icon" />
+        <img
+          className="thumbnail-warning-icon"
+          alt="failure view"
+          src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660451047/movies%20prime%20app/alert-triangle_najaul.png"
+        />
         <p className="thumbnail-error-msg">
           Something went wrong. Please try again
         </p>
@@ -236,7 +225,11 @@ class Home extends Component {
   renderTrendingErrorView = () => (
     <div className="error-page-container">
       <div className="thumbnail-error-page">
-        <IoIosWarning className="thumbnail-warning-icon" />
+        <img
+          className="thumbnail-warning-icon"
+          alt="failure view"
+          src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660451047/movies%20prime%20app/alert-triangle_najaul.png"
+        />
         <p className="thumbnail-error-msg">
           Something went wrong. Please try again
         </p>

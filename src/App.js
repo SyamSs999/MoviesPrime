@@ -6,8 +6,8 @@ import Login from './components/LoginPage'
 import Popular from './components/Popular'
 import SearchPage from './components/SearchPage'
 import MovieDetails from './components/MovieDetails'
-import Account from './components/AccountPage'
-import NotFound from './components/NotFoundPage'
+import AccountPage from './components/AccountPage'
+import NotFoundPage from './components/NotFoundPage'
 
 import './App.css'
 
@@ -18,9 +18,9 @@ const App = () => (
       <ProtectedRoute path="/" exact component={Home} />
       <ProtectedRoute path="/popular" exact component={Popular} />
       <ProtectedRoute path="/search" exact component={SearchPage} />
-      <ProtectedRoute path="/account" exact component={Account} />
+      <ProtectedRoute path="/account" exact component={AccountPage} />
       <ProtectedRoute path="/movies/:id" exact component={MovieDetails} />
-      <Route component={NotFound} />
+      <Route component={NotFoundPage} />
     </Switch>
   </div>
 )
