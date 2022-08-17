@@ -1,3 +1,6 @@
+li {
+  list-style: none;
+}
 .popular-img {
   width: 90px;
   height: 100px;

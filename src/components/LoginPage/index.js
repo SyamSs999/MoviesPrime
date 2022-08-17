@@ -54,7 +54,7 @@ class Login extends Component {
         <img
           className="login-website-logo"
           alt="login website logo"
-          src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660023880/web_site_logo_vwuuip.png"
+          src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660479354/Group_7399_nn7x3u.png"
         />
         <div className="login-form-container">
           <h1 className="login-heading">Login</h1>

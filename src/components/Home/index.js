@@ -10,9 +10,28 @@ import Footer from '../Footer'
 import './index.css'
 
 const settings = {
+  dots: false,
+  infinite: false,
   speed: 500,
   slidesToShow: 4,
-  slidesToScroll: 1,
+  slidesToScroll: 4,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 400,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 }
 
 const renderOriginalsConstraints = {
@@ -27,12 +46,6 @@ const renderTrendingConstraints = {
   fail: 'FAIL',
   loading: 'LOADING',
 }
-const renderPosterConstraints = {
-  initial: 'INITIAL',
-  success: 'SUCCESS',
-  fail: 'FAIL',
-  loading: 'LOADING',
-}
 
 const isHome = true
 
@@ -40,10 +53,9 @@ class Home extends Component {
   state = {
     renderOriginalsStatus: renderOriginalsConstraints.initial,
     renderTrendingStatus: renderTrendingConstraints.initial,
-    renderPosterStatus: renderPosterConstraints.initial,
-    randomMovie: {},
     originalMoviesList: [],
     trendingMoviesList: [],
+    randomMovie: [],
   }
 
   componentDidMount() {
@@ -54,7 +66,6 @@ class Home extends Component {
   getOriginalMoviesData = async () => {
     this.setState({
       renderOriginalsStatus: renderOriginalsConstraints.loading,
-      renderPosterStatus: renderPosterConstraints.loading,
     })
     const jwtToken = Cookies.get('jwt_token')
     const options = {
@@ -72,18 +83,18 @@ class Home extends Component {
         posterPath: eachMovie.poster_path,
         title: eachMovie.title,
       }))
-      const randomNumber = Math.floor(Math.random() * 10)
+      const randomNumber = Math.floor(
+        Math.random() * fetchedOriginalsData.length,
+      )
       const randomMovie = fetchedOriginalsData[randomNumber]
       this.setState({
         originalMoviesList: fetchedOriginalsData,
         renderOriginalsStatus: renderOriginalsConstraints.success,
         randomMovie,
-        renderPosterStatus: renderPosterConstraints.success,
       })
     } else {
       this.setState({
         renderOriginalsStatus: renderOriginalsConstraints.fail,
-        renderPosterStatus: renderPosterConstraints.fail,
       })
     }
   }
@@ -296,13 +307,13 @@ class Home extends Component {
   }
 
   renderPosterSwitchViews = () => {
-    const {renderPosterStatus} = this.state
-    switch (renderPosterStatus) {
-      case renderPosterConstraints.loading:
+    const {renderOriginalsStatus} = this.state
+    switch (renderOriginalsStatus) {
+      case renderOriginalsConstraints.loading:
         return this.renderPosterLoadingView()
-      case renderPosterConstraints.success:
+      case renderOriginalsConstraints.success:
         return this.renderPosterSuccessView()
-      case renderPosterConstraints.fail:
+      case renderOriginalsConstraints.fail:
         return this.renderPosterErrorView()
       default:
         return null

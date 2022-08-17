@@ -31,7 +31,7 @@ class NavBar extends Component {
   }
 
   render() {
-    const {fullMenu} = this.state
+    const {fullMenu, searchValue} = this.state
     const {searchRoute, isHome, isPopular, isAccount} = this.props
     const searchContainer = searchRoute
       ? 'search-input-route-container search-input-container'
@@ -52,7 +52,7 @@ class NavBar extends Component {
             <img
               className="header-web-site"
               alt="website logo"
-              src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660153718/movies%20prime%20app/website_logo_xcawni.svg"
+              src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660479354/Group_7399_nn7x3u.png"
             />
           </Link>
           <ul className="show-menu show1">
@@ -67,6 +67,7 @@ class NavBar extends Component {
             <div className={searchContainer}>
               {searchRoute && (
                 <input
+                  value={searchValue}
                   onChange={this.getSearchInput}
                   placeholder="Search"
                   type="search"
@@ -88,7 +89,7 @@ class NavBar extends Component {
               <img
                 className="avatar show1"
                 alt="profile"
-                src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660041993/AvatarMale_loulo9.png"
+                src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660573232/Avatar_giy0y5.png"
               />
             </Link>
             <button
@@ -101,8 +102,8 @@ class NavBar extends Component {
           </div>
         </div>
 
-        {fullMenu && (
-          <nav>
+        <nav className="show">
+          {fullMenu && (
             <ul className="show-menu">
               <Link to="/" className={homeRoute}>
                 <li>Home</li>
@@ -123,8 +124,8 @@ class NavBar extends Component {
                 </button>
               </li>
             </ul>
-          </nav>
-        )}
+          )}
+        </nav>
       </nav>
     )
   }

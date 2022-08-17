@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+
 import './index.css'
 
 const HomeMovieItems = props => {
@@ -6,9 +7,9 @@ const HomeMovieItems = props => {
   const {title, posterPath, id} = eachMovie
   return (
     <Link to={`/movies/${id}`}>
-      <div>
+      <li>
         <img className="thumbnail-img" alt={title} src={posterPath} />
-      </div>
+      </li>
     </Link>
   )
 }

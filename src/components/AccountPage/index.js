@@ -13,7 +13,6 @@ const AccountPage = props => {
     const {history} = props
     history.replace('/login')
   }
-
   return (
     <>
       <NavBar isAccount={isAccount} />
